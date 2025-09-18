@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  jupyter:
+    build: .
+    container_name: my-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    environment:
+      - JUPYTER_TOKEN=lab
+    command: >
+      jupyter lab
+      --ip=0.0.0.0
+      --allow-root
+      --no-browser
+      --ServerApp.token=${JUPYTER_TOKEN}
