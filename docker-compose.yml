@@ -16,3 +16,4 @@ services:
       --allow-root
       --no-browser
       --ServerApp.token=${JUPYTER_TOKEN}
+  

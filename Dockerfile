@@ -11,7 +11,8 @@ RUN pip install --no-cache-dir \
     numpy \
     pandas \
     matplotlib \
-    scikit-learn
+    scikit-learn \
+    cdflib
 
 # 作業ディレクトリ
 WORKDIR /workspace
