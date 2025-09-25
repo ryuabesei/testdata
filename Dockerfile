@@ -5,6 +5,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
+# ← ここを cartopy 用に追加
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libproj-dev proj-data proj-bin libgeos-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Python ライブラリ
 RUN pip install --no-cache-dir \
     jupyterlab \
@@ -12,7 +17,10 @@ RUN pip install --no-cache-dir \
     pandas \
     matplotlib \
     scikit-learn \
-    cdflib
+    cdflib\
+    shapely \
+    pyproj \
+    cartopy
 
 # 作業ディレクトリ
 WORKDIR /workspace
